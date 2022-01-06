@@ -9,7 +9,8 @@ public class MenuPanel extends JPanel {
     MenuPanel(CardLayout cl, JPanel mainMenuP, Data data){
         super(new GridLayout(2,1));
         setBackground(Color.ORANGE);
-        JLabel l = new JLabel("menu..");
+
+
 
         homeP = new JPanel();
         home = new JButton("Home");
@@ -19,6 +20,5 @@ public class MenuPanel extends JPanel {
         });
 
         add(homeP);
-        add(l);
     }
 }
