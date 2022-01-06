@@ -3,22 +3,40 @@ import java.awt.*;
 
 public class MenuPanel extends JPanel {
 
-    JPanel homeP;
-    JButton home;
+    CardLayout menuCL;
 
     MenuPanel(CardLayout cl, JPanel mainMenuP, Data data){
-        super(new GridLayout(2,1));
+        menuCL = new CardLayout();
+        setLayout(menuCL);
         setBackground(Color.ORANGE);
 
+        JPanel menuPanelHome = new JPanel();
+        MenuData startersP = new MenuData(data.starters, menuCL, this);
+        MenuData mainCourseP = new MenuData(data.mainCourse, menuCL, this);
 
+        JButton starterBtn = new JButton("Starters");
+        JButton mainCourseBtn = new JButton("Main Course");
+        JButton home = new JButton("Home Page");
 
-        homeP = new JPanel();
-        home = new JButton("Home");
-        homeP.add(home);
+        menuPanelHome.add(starterBtn);
+        menuPanelHome.add(mainCourseBtn);
+        menuPanelHome.add(home);
+
+        starterBtn.addActionListener(e -> {
+            menuCL.show(this, "starter");
+        });
+
+        mainCourseBtn.addActionListener(e -> {
+            menuCL.show(this, "mainCourse");
+        });
+
         home.addActionListener(e -> {
             cl.show(mainMenuP, "home");
         });
 
-        add(homeP);
+        add(menuPanelHome, "home");
+        add(startersP, "starter");
+        add(mainCourseP, "mainCourse");
+
     }
 }
