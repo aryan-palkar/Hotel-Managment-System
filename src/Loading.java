@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Loading extends JFrame implements ActionListener{
 
@@ -14,7 +15,10 @@ public class Loading extends JFrame implements ActionListener{
         ImageIcon image = new ImageIcon("restaurant.png");
 
         progressBar = new JProgressBar(0, 20);
-        progressBar.setBounds(0, 570, 600, 30);
+        progressBar.setBounds(0, 580, 600, 20);
+        progressBar.setBackground(new Color(255, 255, 255));
+        progressBar.setForeground(new Color(010101));
+        progressBar.setBorder(null);
 
         label = new JLabel();
         label.setText("Welcome");

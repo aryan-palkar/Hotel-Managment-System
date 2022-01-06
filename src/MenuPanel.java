@@ -6,7 +6,7 @@ public class MenuPanel extends JPanel {
     JPanel homeP;
     JButton home;
 
-    MenuPanel(CardLayout cl, JPanel mainMenuP){
+    MenuPanel(CardLayout cl, JPanel mainMenuP, Data data){
         super(new GridLayout(2,1));
         setBackground(Color.ORANGE);
         JLabel l = new JLabel("menu..");

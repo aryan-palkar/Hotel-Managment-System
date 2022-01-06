@@ -5,7 +5,7 @@ public class BillPanel extends JPanel {
     JPanel homeP;
     JButton home;
 
-    BillPanel(CardLayout cl, JPanel mainMenuP){
+    BillPanel(CardLayout cl, JPanel mainMenuP, Data data){
         super(new GridLayout(2,1));
         setBackground(Color.MAGENTA);
         JLabel l = new JLabel("Bill..");

@@ -1,13 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class MainMenu extends JFrame{
 
     CardLayout cl;
     JPanel mainMenuP;
-
+    Data data;
     MainMenu(){
-        MainMenuPanel home;
+        data = new Data();
+        HomePanel home;
         MenuPanel menu;
         OrderPanel order;
         BillPanel bill;
@@ -15,10 +17,10 @@ public class MainMenu extends JFrame{
         cl = new CardLayout();
         mainMenuP.setLayout(cl);
 
-        home = new MainMenuPanel(cl, mainMenuP);
-        menu = new MenuPanel(cl, mainMenuP);
-        order = new OrderPanel(cl, mainMenuP);
-        bill = new BillPanel(cl, mainMenuP);
+        home = new HomePanel(cl, mainMenuP, data);
+        menu = new MenuPanel(cl, mainMenuP, data);
+        order = new OrderPanel(cl, mainMenuP, data);
+        bill = new BillPanel(cl, mainMenuP, data);
 
 
         mainMenuP.add(home , "home");
