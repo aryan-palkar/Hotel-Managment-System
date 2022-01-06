@@ -13,13 +13,16 @@ public class OrderPanel extends JPanel {
 
         homeP = new JPanel();
         home = new JButton("Home");
+        home.setFont(new Font(null,Font.BOLD,50));
+        home.setHorizontalAlignment(JButton.CENTER);
+        home.setVerticalAlignment(JButton.BOTTOM);
         homeP.add(home);
         home.addActionListener(e -> {
             cl.show(mainMenuP, "home");
         });
 
-        add(homeP);
         add(l);
+        add(homeP);
 //        System.out.println(data.name);
     }
 }
