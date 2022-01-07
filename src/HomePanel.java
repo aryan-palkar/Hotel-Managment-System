@@ -4,7 +4,7 @@ import java.awt.*;
 public class HomePanel extends JPanel{
 
 
-    HomePanel(CardLayout cl, JPanel mainMenuP, Data data){
+    HomePanel(CardLayout cl, JPanel mainMenuP, Data data, BillPanel billPanel){
         super(new GridLayout(2,1));
 
         JLabel homeText; // this will show as Home in main menu
@@ -46,6 +46,7 @@ public class HomePanel extends JPanel{
         billP.setBackground(new Color(168, 202, 255));
         billP.add(bill);
         bill.addActionListener(e -> {
+            billPanel.GenerateBill(cl,mainMenuP,data);
             cl.show(mainMenuP, "bill");
         });
 

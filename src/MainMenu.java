@@ -7,20 +7,21 @@ public class MainMenu extends JFrame{
     CardLayout cl;
     JPanel mainMenuP;
     Data data;
+    HomePanel home;
+    MenuPanel menu;
+    OrderPanel order;
+    BillPanel bill = new BillPanel();
+
     MainMenu(){
         data = new Data();
-        HomePanel home;
-        MenuPanel menu;
-        OrderPanel order;
-        BillPanel bill;
+
         mainMenuP = new JPanel();
         cl = new CardLayout();
         mainMenuP.setLayout(cl);
 
-        home = new HomePanel(cl, mainMenuP, data);
+        home = new HomePanel(cl, mainMenuP, data, bill);
         menu = new MenuPanel(cl, mainMenuP, data);
         order = new OrderPanel(cl, mainMenuP, data);
-        bill = new BillPanel(cl, mainMenuP, data);
 
 
         mainMenuP.add(home , "home");
