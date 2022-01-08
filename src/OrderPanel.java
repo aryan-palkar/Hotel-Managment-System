@@ -12,9 +12,9 @@ public class OrderPanel extends JPanel {
         Panel1.setBackground(new Color(168, 202, 255));
         Panel1.setLayout(new BoxLayout(Panel1, BoxLayout.Y_AXIS));
         JLabel starters = new JLabel("Starters");
-        starters.setFont(new Font("Cambria",Font.BOLD,20));
+        starters.setFont(new Font("Cambria",Font.BOLD,30));
         JLabel mainCourse = new JLabel("Main Course");
-        mainCourse.setFont(new Font("Cambria",Font.BOLD,20));
+        mainCourse.setFont(new Font("Cambria",Font.BOLD,30));
         boolean flag = false;
         for (DataQuantum d: data.starters) { if(d.count != 0) flag = true;}
         for (DataQuantum d: data.mainCourse) { if(d.count != 0) flag = true;}

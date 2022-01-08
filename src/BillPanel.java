@@ -16,9 +16,9 @@ public class BillPanel extends JPanel {
         Panel1.setLayout(new BoxLayout(Panel1, BoxLayout.Y_AXIS));
         Panel1.setBackground(new Color(168, 202, 255));
         JLabel starters = new JLabel("Starters");
-        starters.setFont(new Font("Cambria",Font.BOLD,20));
+        starters.setFont(new Font("Cambria",Font.BOLD,35));
         JLabel mainCourse = new JLabel("Main Course");
-        mainCourse.setFont(new Font("Cambria",Font.BOLD,20));
+        mainCourse.setFont(new Font("Cambria",Font.BOLD,35));
 
         boolean flag = false;
         for (DataQuantum d: data.starters) { if(d.count != 0) flag = true;}
@@ -30,8 +30,12 @@ public class BillPanel extends JPanel {
                     JPanel temp = new JPanel();
                     temp.setBackground(new Color(168, 202, 255));
                     total += d.count * d.price;
-                    temp.add(new JLabel(d.name));
-                    temp.add(new JLabel("Rs. " +  d.price + " X"+ d.count + " = Rs." + d.price * d.count));
+                    JLabel temp1 = new JLabel(d.name);
+                    temp1.setFont(new Font("Cambria",Font.BOLD,20));
+                    JLabel temp2 = new JLabel("Rs. " +  d.price + " X"+ d.count + " = Rs." + d.price * d.count);
+                    temp2.setFont(new Font("Cambria",Font.BOLD,20));
+                    temp.add(temp1);
+                    temp.add(temp2);
                     Panel1.add(temp);
                 }
             }
@@ -42,16 +46,21 @@ public class BillPanel extends JPanel {
                     JPanel temp = new JPanel();
                     temp.setBackground(new Color(168, 202, 255));
                     total += d.count * d.price;
-                    temp.add(new JLabel(d.name));
-                    temp.add(new JLabel("Rs. " +  d.price + " X"+ d.count + " = Rs." + d.price * d.count));
+                    JLabel temp1 = new JLabel(d.name);
+                    temp1.setFont(new Font("Cambria",Font.BOLD,20));
+                    JLabel temp2 = new JLabel("Rs. " +  d.price + " X"+ d.count + " = Rs." + d.price * d.count);
+                    temp2.setFont(new Font("Cambria",Font.BOLD,20));
+                    temp.add(temp1);
+                    temp.add(temp2);
                     Panel1.add(temp);
                 }
             }
         }else{
             Panel1.add(new JLabel("Oops! You Didn't order anything"));
         }
-
-        Panel1.add(new JLabel("Total = " + total));
+        JLabel totalall = new JLabel("Total = " + total);
+        totalall.setFont(new Font("Cambria",Font.BOLD,25));
+        Panel1.add(totalall);
 
         home = new JButton("Home");
         home.addActionListener(e -> {
