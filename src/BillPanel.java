@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BillPanel extends JPanel {
-    private JPanel Panel1;
+    private JPanel Panel1,Panel2;
     JButton home;
 
     BillPanel(){
