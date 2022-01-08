@@ -18,11 +18,14 @@ public class MenuPanel extends JPanel {
         JButton starterBtn = new JButton("Starters");
         starterBtn.setFont(new Font("Century Gothic",Font.BOLD,30));
         starterBtn.setBounds(300, 200, 200, 60);
+        starterBtn.setFocusable(false);
         JButton mainCourseBtn = new JButton("Main Course");
         mainCourseBtn.setFont(new Font("Century Gothic",Font.BOLD,30));
         mainCourseBtn.setBounds(275,300,250,60);
+        mainCourseBtn.setFocusable(false);
         JButton home = new JButton("Home Page");
         home.setFont(new Font("Cambria",Font.PLAIN,25));
+        home.setFocusable(false);
         JPanel panel1 = new JPanel();
         panel1.setBackground(new Color(168, 202, 255));
         panel1.setLayout(null);
