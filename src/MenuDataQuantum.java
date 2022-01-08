@@ -4,7 +4,6 @@ import java.awt.*;
 public class MenuDataQuantum extends JPanel {
 
     MenuDataQuantum(DataQuantum dq){
-        setLayout(new GridLayout(1,3));
         JLabel name = new JLabel(dq.name);
         JLabel price = new JLabel("Rs. " + dq.price);
         JButton minus = new JButton("-");

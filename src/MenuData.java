@@ -13,7 +13,7 @@ public class MenuData extends JPanel {
         }
         JButton back = new JButton("Back");
         back.addActionListener(e -> {
-
+            this.remove(panel1);
             cl.show(prev, "home");
         });
         add(back, BorderLayout.SOUTH);

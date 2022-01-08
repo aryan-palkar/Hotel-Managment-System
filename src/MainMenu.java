@@ -9,7 +9,7 @@ public class MainMenu extends JFrame{
     Data data;
     HomePanel home;
     MenuPanel menu;
-    OrderPanel order;
+    OrderPanel order = new OrderPanel();;
     BillPanel bill = new BillPanel();
 
     MainMenu(){
@@ -19,9 +19,8 @@ public class MainMenu extends JFrame{
         cl = new CardLayout();
         mainMenuP.setLayout(cl);
 
-        home = new HomePanel(cl, mainMenuP, data, bill);
+        home = new HomePanel(cl, mainMenuP, data, bill, order);
         menu = new MenuPanel(cl, mainMenuP, data);
-        order = new OrderPanel(cl, mainMenuP, data);
 
 
         mainMenuP.add(home , "home");

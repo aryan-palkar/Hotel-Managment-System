@@ -98,6 +98,8 @@ public class BillPanel extends JPanel {
         }else{
             Panel1.add(new JLabel("Oops! Didn't order anything"));
         }
+
+
         home = new JButton("Home");
         home.addActionListener(e -> {
             this.remove(Panel1);
