@@ -13,6 +13,7 @@ public class MenuPanel extends JPanel {
         setBackground(Color.ORANGE);
 
         JPanel menuPanelHome = new JPanel();
+        menuPanelHome.setLayout(new BorderLayout());
 //        MenuData startersP = new MenuData(data.starters, menuCL, this);
 //        MenuData mainCourseP = new MenuData(data.mainCourse, menuCL, this);
 
@@ -20,9 +21,11 @@ public class MenuPanel extends JPanel {
         JButton mainCourseBtn = new JButton("Main Course");
         JButton home = new JButton("Home Page");
 
-        menuPanelHome.add(starterBtn);
-        menuPanelHome.add(mainCourseBtn);
-        menuPanelHome.add(home);
+        JPanel panel1 = new JPanel();
+        panel1.add(starterBtn);
+        panel1.add(mainCourseBtn);
+        menuPanelHome.add(panel1, BorderLayout.CENTER);
+        menuPanelHome.add(home, BorderLayout.SOUTH);
 
         starterBtn.addActionListener(e -> {
             startersP.generateMenuData(data.starters, menuCL, this);
