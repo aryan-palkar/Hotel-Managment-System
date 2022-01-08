@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BillPanel extends JPanel {
-    private JPanel Panel1,Panel2;
+    private JPanel Panel1;
     JButton home;
 
     BillPanel(){
@@ -44,9 +44,7 @@ public class BillPanel extends JPanel {
             Panel1.add(new JLabel("Oops! You Didn't order anything"));
         }
 
-        Panel2 = new JPanel(new BoxLayout(Panel2, BoxLayout.Y_AXIS));
-        Panel2.add(Panel1);
-        Panel2.add(new JLabel("Total = " + total));
+        Panel1.add(new JLabel("Total = " + total));
 
         home = new JButton("Home");
         home.addActionListener(e -> {
@@ -54,6 +52,6 @@ public class BillPanel extends JPanel {
             cl.show(mainMenuP, "home");
         });
         add(home, BorderLayout.SOUTH);
-        add(Panel2, BorderLayout.CENTER);
+        add(Panel1, BorderLayout.CENTER);
     }
 }
