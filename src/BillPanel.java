@@ -81,6 +81,8 @@ public class BillPanel extends JPanel {
 
     void GenerateBill(CardLayout cl, JPanel mainMenuP, Data data){
         setLayout(new BorderLayout());
+
+        Integer total = new Integer(0);
         Panel1 = new JPanel();
         Panel1.setLayout(new BoxLayout(Panel1, BoxLayout.Y_AXIS));
 
@@ -92,6 +94,7 @@ public class BillPanel extends JPanel {
             for (DataQuantum d: data.starters) {
                 if(d.count != 0){
                     JPanel temp = new JPanel();
+                    total += d.count * d.price;
                     temp.add(new JLabel(d.name));
                     temp.add(new JLabel("Rs. " +  d.price + " X"+ d.count + " = Rs." + d.price * d.count));
                     Panel1.add(temp);
@@ -102,6 +105,7 @@ public class BillPanel extends JPanel {
             for (DataQuantum d: data.mainCourse) {
                 if(d.count != 0){
                     JPanel temp = new JPanel();
+                    total += d.count * d.price;
                     temp.add(new JLabel(d.name));
                     temp.add(new JLabel("Rs. " +  d.price + " X"+ d.count + " = Rs." + d.price * d.count));
                     Panel1.add(temp);
@@ -111,6 +115,9 @@ public class BillPanel extends JPanel {
             Panel1.add(new JLabel("Oops! You Didn't order anything"));
         }
 
+        Panel2 = new JPanel(new BoxLayout(Panel2, BoxLayout.Y_AXIS));
+        Panel2.add(Panel1);
+        Panel2.add(new JLabel("Total = " + total));
 
         home = new JButton("Home");
         home.addActionListener(e -> {
@@ -118,6 +125,6 @@ public class BillPanel extends JPanel {
             cl.show(mainMenuP, "home");
         });
         add(home, BorderLayout.SOUTH);
-        add(Panel1, BorderLayout.CENTER);
+        add(Panel2, BorderLayout.CENTER);
     }
 }

@@ -50,7 +50,6 @@ public class HomePanel extends JPanel{
             billPanel.GenerateBill(cl,mainMenuP,data);
             cl.show(mainMenuP, "bill");
         });
-
         buttonSection.add(menuP);
         buttonSection.add(ordersP);
         buttonSection.add(billP);

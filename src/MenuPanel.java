@@ -14,18 +14,12 @@ public class MenuPanel extends JPanel {
 
         JPanel menuPanelHome = new JPanel();
         menuPanelHome.setLayout(new BorderLayout());
-//        MenuData startersP = new MenuData(data.starters, menuCL, this);
-//        MenuData mainCourseP = new MenuData(data.mainCourse, menuCL, this);
 
         JButton starterBtn = new JButton("Starters");
         JButton mainCourseBtn = new JButton("Main Course");
         JButton home = new JButton("Home Page");
-
         JPanel panel1 = new JPanel();
-        panel1.add(starterBtn);
-        panel1.add(mainCourseBtn);
-        menuPanelHome.add(panel1, BorderLayout.CENTER);
-        menuPanelHome.add(home, BorderLayout.SOUTH);
+
 
         starterBtn.addActionListener(e -> {
             startersP.generateMenuData(data.starters, menuCL, this);
@@ -40,6 +34,12 @@ public class MenuPanel extends JPanel {
         home.addActionListener(e -> {
             cl.show(mainMenuP, "home");
         });
+
+
+        panel1.add(starterBtn);
+        panel1.add(mainCourseBtn);
+        menuPanelHome.add(panel1, BorderLayout.CENTER);
+        menuPanelHome.add(home, BorderLayout.SOUTH);
 
         add(menuPanelHome, "home");
         add(startersP, "starter");
